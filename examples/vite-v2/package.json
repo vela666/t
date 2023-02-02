@@ -7,7 +7,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
-    "vite-plugin-vue-setup-expand": "^0.1.0",
+    "vite-plugin-vue-setup-expand": "^0.1.2",
     "vue": "^2.7.7"
   },
   "devDependencies": {

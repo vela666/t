@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vite-plugin-vue-setup-expand": "^0.1.0",
+    "vite-plugin-vue-setup-expand": "^0.1.2",
     "vue": "^3.2.45"
   },
   "devDependencies": {
