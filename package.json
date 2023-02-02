@@ -1,0 +1,57 @@
+{
+  "name": "vite-plugin-vue-setup-expand",
+  "version": "0.1.2",
+  "description": "Extended setup syntax sugar setting",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7.0.0"
+  },
+  "packageManager": "pnpm@7.26.2",
+  "scripts": {
+    "dev": "pnpm run build --watch --ignore-watch examples",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prepublishOnly": "pnpm run build",
+    "release": "npx bumpp --push --tag --commit && pnpm publish",
+    "example:vue2": "cd examples/vite-vue2 && pnpm run build",
+    "example:vue3": "cd examples/vite-vue3 && pnpm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vela666/vite-plugin-vue-setup-expand"
+  },
+  "keywords": [
+    "vite",
+    "vue",
+    "setup",
+    "vite-plugin"
+  ],
+  "author": "vela37",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vela666/vite-plugin-vue-setup-expand/issues"
+  },
+  "homepage": "https://github.com/vela666/vite-plugin-vue-setup-expand",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "tsup": "^5.12.8",
+    "typescript": "^4.6.4",
+    "bumpp": "^7.1.1",
+    "vite": "*"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.45",
+    "rd": "^2.0.1"
+  }
+}

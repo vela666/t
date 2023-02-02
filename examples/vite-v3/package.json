@@ -1,0 +1,18 @@
+{
+  "name": "vite-v3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite-plugin-vue-setup-expand": "^0.1.0",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
+  }
+}
