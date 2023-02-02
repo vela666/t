@@ -7,7 +7,7 @@ interface optionsAttrs {
     inheritAttrs?: string,
 }
 
-export default function setupExtends(): Plugin {
+export default function (): Plugin {
     return {
         name: 'vite-plugin-vue-setup-expand',
         enforce: 'pre',
@@ -21,7 +21,7 @@ export default function setupExtends(): Plugin {
                 const {attrs} = compileScript(descriptor, {id})
                 options = attrs
             } else {
-                let temp: RegExpMatchArray | null = descriptor.source.match(/<script[^>]*(name|setup)[^>]*>([\s\S]*?)<\/script>/)
+                let temp: RegExpMatchArray | null = descriptor.source.match(/<script[^>]*setup[^>]*>([\s\S]*?)<\/script>/)
                 if (temp) {
                     temp = temp[0].match(/(?<!<)(?<=\s+)(?!setup\s+)\w+(=".*?"|='.*?')?/g)
                     options = temp!.reduce((p, c) => {
@@ -38,13 +38,12 @@ export default function setupExtends(): Plugin {
             const {name, lang, inheritAttrs} = options
             if (name) {
                 const template = `
-                  <script${lang ? ` lang="${lang}"` : ''}>
-                   export default {
-                      ${name ? `name: "${name}",` : ''}
-                      ${inheritAttrs ? `inheritAttrs: ${inheritAttrs !== 'false'},` : ''}
-                   }
-                  </script>
-                  `;
+                <script${lang ? ` lang="${lang}"` : ""}>
+                 export default {
+                    ${name ? `name: "${name}",` : ""}
+                    ${inheritAttrs ? `inheritAttrs: ${inheritAttrs !== "false"},` : ""}
+                 }
+                </script>`;
                 code += template
             }
             return code
