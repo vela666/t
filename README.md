@@ -1,6 +1,6 @@
 # vite-plugin-vue-setup-expand
 
-Make vue script settings syntax support name and other properties
+Make setup syntax sugar support names and other attributes
 
 ## Install (pnpm or npm or yarn)
 ```bash
