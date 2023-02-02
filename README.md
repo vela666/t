@@ -35,6 +35,8 @@ or
 <template>hello world</template>
 <script setup inheritAttrs="false" name="LayoutContainer"></script>
 ```
+![Image text](./1.jpg)
+
 ## License
 
 MIT
